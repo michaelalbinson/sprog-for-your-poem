@@ -9,13 +9,18 @@
 /* Begin PBXBuildFile section */
 		BFFD1BA2269A4E8E00AE40E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFD1BA1269A4E8E00AE40E0 /* AppDelegate.swift */; };
 		BFFD1BA4269A4E8E00AE40E0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFD1BA3269A4E8E00AE40E0 /* SceneDelegate.swift */; };
-		BFFD1BA6269A4E8E00AE40E0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFD1BA5269A4E8E00AE40E0 /* ViewController.swift */; };
+		BFFD1BA6269A4E8E00AE40E0 /* LandingPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFD1BA5269A4E8E00AE40E0 /* LandingPageVC.swift */; };
 		BFFD1BA9269A4E8E00AE40E0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFFD1BA7269A4E8E00AE40E0 /* Main.storyboard */; };
 		BFFD1BAC269A4E8E00AE40E0 /* Sprog_For_Your_Poem.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BFFD1BAA269A4E8E00AE40E0 /* Sprog_For_Your_Poem.xcdatamodeld */; };
 		BFFD1BAE269A4E9000AE40E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFFD1BAD269A4E9000AE40E0 /* Assets.xcassets */; };
 		BFFD1BB1269A4E9000AE40E0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFFD1BAF269A4E9000AE40E0 /* LaunchScreen.storyboard */; };
 		BFFD1BBC269A4E9000AE40E0 /* Sprog_For_Your_PoemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFD1BBB269A4E9000AE40E0 /* Sprog_For_Your_PoemTests.swift */; };
 		BFFD1BC7269A4E9000AE40E0 /* Sprog_For_Your_PoemUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFD1BC6269A4E9000AE40E0 /* Sprog_For_Your_PoemUITests.swift */; };
+		BFFD1BDD269A4EBC00AE40E0 /* RequestResonse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFD1BD8269A4EBC00AE40E0 /* RequestResonse.swift */; };
+		BFFD1BDE269A4EBC00AE40E0 /* HttpMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFD1BD9269A4EBC00AE40E0 /* HttpMethod.swift */; };
+		BFFD1BDF269A4EBC00AE40E0 /* SwiftResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFD1BDA269A4EBC00AE40E0 /* SwiftResponse.swift */; };
+		BFFD1BE0269A4EBC00AE40E0 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFD1BDB269A4EBC00AE40E0 /* Request.swift */; };
+		BFFD1BE1269A4EBC00AE40E0 /* PoemLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFD1BDC269A4EBC00AE40E0 /* PoemLoader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +44,7 @@
 		BFFD1B9E269A4E8E00AE40E0 /* Sprog For Your Poem.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sprog For Your Poem.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFFD1BA1269A4E8E00AE40E0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BFFD1BA3269A4E8E00AE40E0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		BFFD1BA5269A4E8E00AE40E0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BFFD1BA5269A4E8E00AE40E0 /* LandingPageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingPageVC.swift; sourceTree = "<group>"; };
 		BFFD1BA8269A4E8E00AE40E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BFFD1BAB269A4E8E00AE40E0 /* Sprog_For_Your_Poem.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Sprog_For_Your_Poem.xcdatamodel; sourceTree = "<group>"; };
 		BFFD1BAD269A4E9000AE40E0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -51,6 +56,11 @@
 		BFFD1BC2269A4E9000AE40E0 /* Sprog For Your PoemUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Sprog For Your PoemUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFFD1BC6269A4E9000AE40E0 /* Sprog_For_Your_PoemUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sprog_For_Your_PoemUITests.swift; sourceTree = "<group>"; };
 		BFFD1BC8269A4E9000AE40E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BFFD1BD8269A4EBC00AE40E0 /* RequestResonse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestResonse.swift; sourceTree = "<group>"; };
+		BFFD1BD9269A4EBC00AE40E0 /* HttpMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpMethod.swift; sourceTree = "<group>"; };
+		BFFD1BDA269A4EBC00AE40E0 /* SwiftResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftResponse.swift; sourceTree = "<group>"; };
+		BFFD1BDB269A4EBC00AE40E0 /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		BFFD1BDC269A4EBC00AE40E0 /* PoemLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PoemLoader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,9 +111,10 @@
 		BFFD1BA0269A4E8E00AE40E0 /* Sprog For Your Poem */ = {
 			isa = PBXGroup;
 			children = (
+				BFFD1BE5269A4ED200AE40E0 /* controllers */,
+				BFFD1BD7269A4EBC00AE40E0 /* network */,
 				BFFD1BA1269A4E8E00AE40E0 /* AppDelegate.swift */,
 				BFFD1BA3269A4E8E00AE40E0 /* SceneDelegate.swift */,
-				BFFD1BA5269A4E8E00AE40E0 /* ViewController.swift */,
 				BFFD1BA7269A4E8E00AE40E0 /* Main.storyboard */,
 				BFFD1BAD269A4E9000AE40E0 /* Assets.xcassets */,
 				BFFD1BAF269A4E9000AE40E0 /* LaunchScreen.storyboard */,
@@ -129,6 +140,26 @@
 				BFFD1BC8269A4E9000AE40E0 /* Info.plist */,
 			);
 			path = "Sprog For Your PoemUITests";
+			sourceTree = "<group>";
+		};
+		BFFD1BD7269A4EBC00AE40E0 /* network */ = {
+			isa = PBXGroup;
+			children = (
+				BFFD1BD8269A4EBC00AE40E0 /* RequestResonse.swift */,
+				BFFD1BD9269A4EBC00AE40E0 /* HttpMethod.swift */,
+				BFFD1BDA269A4EBC00AE40E0 /* SwiftResponse.swift */,
+				BFFD1BDB269A4EBC00AE40E0 /* Request.swift */,
+				BFFD1BDC269A4EBC00AE40E0 /* PoemLoader.swift */,
+			);
+			path = network;
+			sourceTree = "<group>";
+		};
+		BFFD1BE5269A4ED200AE40E0 /* controllers */ = {
+			isa = PBXGroup;
+			children = (
+				BFFD1BA5269A4E8E00AE40E0 /* LandingPageVC.swift */,
+			);
+			path = controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,9 +292,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BFFD1BA6269A4E8E00AE40E0 /* ViewController.swift in Sources */,
+				BFFD1BA6269A4E8E00AE40E0 /* LandingPageVC.swift in Sources */,
+				BFFD1BE0269A4EBC00AE40E0 /* Request.swift in Sources */,
 				BFFD1BA2269A4E8E00AE40E0 /* AppDelegate.swift in Sources */,
+				BFFD1BE1269A4EBC00AE40E0 /* PoemLoader.swift in Sources */,
+				BFFD1BDF269A4EBC00AE40E0 /* SwiftResponse.swift in Sources */,
 				BFFD1BAC269A4E8E00AE40E0 /* Sprog_For_Your_Poem.xcdatamodeld in Sources */,
+				BFFD1BDD269A4EBC00AE40E0 /* RequestResonse.swift in Sources */,
+				BFFD1BDE269A4EBC00AE40E0 /* HttpMethod.swift in Sources */,
 				BFFD1BA4269A4E8E00AE40E0 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
