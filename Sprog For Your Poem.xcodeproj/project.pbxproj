@@ -3,10 +3,20 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BF2D08FA299F66250056A1D3 /* SprogJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2D08F9299F66250056A1D3 /* SprogJson.swift */; };
+		BF2D08FC299F67640056A1D3 /* SprogParentComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2D08FB299F67640056A1D3 /* SprogParentComment.swift */; };
+		BF89D5CC2998D14700951CDC /* Poem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF89D5CB2998D14700951CDC /* Poem.swift */; };
+		BF89D5CE2998D16900951CDC /* Submission.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF89D5CD2998D16900951CDC /* Submission.swift */; };
+		BF89D5D12998D2A900951CDC /* ParentComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF89D5D02998D2A900951CDC /* ParentComment.swift */; };
+		BF89D5D329996B5900951CDC /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF89D5D229996B5900951CDC /* DatabaseManager.swift */; };
+		BF89D5D529996DA000951CDC /* DatabaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF89D5D429996D9F00951CDC /* DatabaseModel.swift */; };
+		BF89D5DB299980A800951CDC /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = BF89D5DA299980A800951CDC /* SQLite */; };
+		BF89D5DD2999863800951CDC /* ColumnType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF89D5DC2999863800951CDC /* ColumnType.swift */; };
+		BF89D5E0299F452F00951CDC /* Sha256.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF89D5DF299F452F00951CDC /* Sha256.swift */; };
 		BFFD1BA2269A4E8E00AE40E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFD1BA1269A4E8E00AE40E0 /* AppDelegate.swift */; };
 		BFFD1BA4269A4E8E00AE40E0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFD1BA3269A4E8E00AE40E0 /* SceneDelegate.swift */; };
 		BFFD1BA6269A4E8E00AE40E0 /* LandingPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFD1BA5269A4E8E00AE40E0 /* LandingPageVC.swift */; };
@@ -41,6 +51,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BF06A08A299F4B9600D66702 /* test.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = test.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		BF2D08F9299F66250056A1D3 /* SprogJson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SprogJson.swift; sourceTree = "<group>"; };
+		BF2D08FB299F67640056A1D3 /* SprogParentComment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SprogParentComment.swift; sourceTree = "<group>"; };
+		BF89D5CB2998D14700951CDC /* Poem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Poem.swift; sourceTree = "<group>"; };
+		BF89D5CD2998D16900951CDC /* Submission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Submission.swift; sourceTree = "<group>"; };
+		BF89D5D02998D2A900951CDC /* ParentComment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentComment.swift; sourceTree = "<group>"; };
+		BF89D5D229996B5900951CDC /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
+		BF89D5D429996D9F00951CDC /* DatabaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseModel.swift; sourceTree = "<group>"; };
+		BF89D5DC2999863800951CDC /* ColumnType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColumnType.swift; sourceTree = "<group>"; };
+		BF89D5DF299F452F00951CDC /* Sha256.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sha256.swift; sourceTree = "<group>"; };
 		BFFD1B9E269A4E8E00AE40E0 /* Sprog For Your Poem.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sprog For Your Poem.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFFD1BA1269A4E8E00AE40E0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BFFD1BA3269A4E8E00AE40E0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -68,6 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF89D5DB299980A800951CDC /* SQLite in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,6 +109,54 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BF2D08FD299F6DB90056A1D3 /* json */ = {
+			isa = PBXGroup;
+			children = (
+				BF2D08F9299F66250056A1D3 /* SprogJson.swift */,
+				BF2D08FB299F67640056A1D3 /* SprogParentComment.swift */,
+			);
+			path = json;
+			sourceTree = "<group>";
+		};
+		BF2D08FE299F6DCF0056A1D3 /* db */ = {
+			isa = PBXGroup;
+			children = (
+				BF89D5CB2998D14700951CDC /* Poem.swift */,
+				BF89D5CD2998D16900951CDC /* Submission.swift */,
+				BF89D5D02998D2A900951CDC /* ParentComment.swift */,
+				BF2D08FF299F6DE80056A1D3 /* utils */,
+			);
+			path = db;
+			sourceTree = "<group>";
+		};
+		BF2D08FF299F6DE80056A1D3 /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				BF89D5DC2999863800951CDC /* ColumnType.swift */,
+				BF89D5D229996B5900951CDC /* DatabaseManager.swift */,
+				BF89D5D429996D9F00951CDC /* DatabaseModel.swift */,
+			);
+			path = utils;
+			sourceTree = "<group>";
+		};
+		BF89D5CA2998D12D00951CDC /* models */ = {
+			isa = PBXGroup;
+			children = (
+				BF2D08FE299F6DCF0056A1D3 /* db */,
+				BF2D08FD299F6DB90056A1D3 /* json */,
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
+		BF89D5DE299F450C00951CDC /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				BF89D5DF299F452F00951CDC /* Sha256.swift */,
+				BF06A08A299F4B9600D66702 /* test.playground */,
+			);
+			path = utils;
+			sourceTree = "<group>";
+		};
 		BFFD1B95269A4E8D00AE40E0 = {
 			isa = PBXGroup;
 			children = (
@@ -111,6 +180,8 @@
 		BFFD1BA0269A4E8E00AE40E0 /* Sprog For Your Poem */ = {
 			isa = PBXGroup;
 			children = (
+				BF89D5DE299F450C00951CDC /* utils */,
+				BF89D5CA2998D12D00951CDC /* models */,
 				BFFD1BE5269A4ED200AE40E0 /* controllers */,
 				BFFD1BD7269A4EBC00AE40E0 /* network */,
 				BFFD1BA1269A4E8E00AE40E0 /* AppDelegate.swift */,
@@ -178,6 +249,9 @@
 			dependencies = (
 			);
 			name = "Sprog For Your Poem";
+			packageProductDependencies = (
+				BF89D5DA299980A800951CDC /* SQLite */,
+			);
 			productName = "Sprog For Your Poem";
 			productReference = BFFD1B9E269A4E8E00AE40E0 /* Sprog For Your Poem.app */;
 			productType = "com.apple.product-type.application";
@@ -249,6 +323,9 @@
 				Base,
 			);
 			mainGroup = BFFD1B95269A4E8D00AE40E0;
+			packageReferences = (
+				BF89D5D9299980A800951CDC /* XCRemoteSwiftPackageReference "SQLite" */,
+			);
 			productRefGroup = BFFD1B9F269A4E8E00AE40E0 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -292,14 +369,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF89D5CC2998D14700951CDC /* Poem.swift in Sources */,
 				BFFD1BA6269A4E8E00AE40E0 /* LandingPageVC.swift in Sources */,
 				BFFD1BE0269A4EBC00AE40E0 /* Request.swift in Sources */,
+				BF89D5D329996B5900951CDC /* DatabaseManager.swift in Sources */,
 				BFFD1BA2269A4E8E00AE40E0 /* AppDelegate.swift in Sources */,
 				BFFD1BE1269A4EBC00AE40E0 /* PoemLoader.swift in Sources */,
+				BF2D08FA299F66250056A1D3 /* SprogJson.swift in Sources */,
 				BFFD1BDF269A4EBC00AE40E0 /* SwiftResponse.swift in Sources */,
 				BFFD1BAC269A4E8E00AE40E0 /* Sprog_For_Your_Poem.xcdatamodeld in Sources */,
+				BF2D08FC299F67640056A1D3 /* SprogParentComment.swift in Sources */,
+				BF89D5D12998D2A900951CDC /* ParentComment.swift in Sources */,
+				BF89D5CE2998D16900951CDC /* Submission.swift in Sources */,
+				BF89D5DD2999863800951CDC /* ColumnType.swift in Sources */,
 				BFFD1BDD269A4EBC00AE40E0 /* RequestResonse.swift in Sources */,
+				BF89D5E0299F452F00951CDC /* Sha256.swift in Sources */,
 				BFFD1BDE269A4EBC00AE40E0 /* HttpMethod.swift in Sources */,
+				BF89D5D529996DA000951CDC /* DatabaseModel.swift in Sources */,
 				BFFD1BA4269A4E8E00AE40E0 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -633,6 +719,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		BF89D5D9299980A800951CDC /* XCRemoteSwiftPackageReference "SQLite" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/stephencelis/SQLite.swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.9.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		BF89D5DA299980A800951CDC /* SQLite */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BF89D5D9299980A800951CDC /* XCRemoteSwiftPackageReference "SQLite" */;
+			productName = SQLite;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		BFFD1BAA269A4E8E00AE40E0 /* Sprog_For_Your_Poem.xcdatamodeld */ = {
