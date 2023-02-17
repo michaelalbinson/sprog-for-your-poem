@@ -18,6 +18,7 @@ struct ParentComment: Codable, DatabaseModel {
     let content: String
     let id: Int64?
     let childPoemId: Int64
+    let score: Int64
     let order: Int
     
     static func tableName() -> String {
@@ -34,7 +35,8 @@ struct ParentComment: Codable, DatabaseModel {
             "link": ColumnType.T_String,
             "content": ColumnType.T_String,
             "childPoemId": ColumnType.T_Int64,
-            "order": ColumnType.T_Int
+            "order": ColumnType.T_Int,
+            "score": ColumnType.T_Int64,
         ]
     }
     

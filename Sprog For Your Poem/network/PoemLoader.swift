@@ -13,11 +13,11 @@ class PoemLoader {
     static let URL_FULL: String = "poems.json"
     
     static func get60Days() {
-        loadPoemJSON(urlPath: PoemLoader.URL_60_DAY)
+        loadPoemJSON(urlPath: URL_ROOT + PoemLoader.URL_60_DAY)
     }
     
     static func getFull() {
-        loadPoemJSON(urlPath: PoemLoader.URL_FULL)
+        loadPoemJSON(urlPath: URL_ROOT + PoemLoader.URL_FULL)
     }
     
     static func peekPoems() {
@@ -28,12 +28,17 @@ class PoemLoader {
     }
     
     private static func loadPoemJSON(urlPath: String) {
-        Request(url: urlPath, method: .GET).withBody(body: nil).exec() { response in
-            
+        Request(url: urlPath, method: .GET).exec() { response in
+            print(response)
+            for poem in response.getSprogified() {
+                loadPoem(poem)
+            }
+            print("Done")
         }
     }
     
     static func loadPoem(_ poemMetadata: SprogJson) {
+        print("Loading poem \(poemMetadata.link)")
         let poem = Poem(
             gold: poemMetadata.gold,
             platinum: poemMetadata.platinum,
@@ -49,7 +54,7 @@ class PoemLoader {
             title: poemMetadata.submission_title,
             link: poemMetadata.link,
             user: poemMetadata.submission_user,
-            content: poemMetadata.orig_content,
+            content: poemMetadata.orig_submission_content,
             poemId: poem.id!,
             id: nil
         ).save()
@@ -66,6 +71,7 @@ class PoemLoader {
                 content: parent.orig_body,
                 id: nil,
                 childPoemId: poem.id!,
+                score: parent.score,
                 order: count
             ).save()
             count += 1

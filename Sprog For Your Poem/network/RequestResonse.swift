@@ -12,6 +12,7 @@ class RequestResonse {
     private var httpCode: Int = 0
     private var responseJSON: Any? = nil
     private var headers: [AnyHashable: Any]? = nil
+    private var hadError: Bool = false
     
     init(swiftResponse: SwiftResponse) {
         self.swiftResponse = swiftResponse
@@ -24,6 +25,11 @@ class RequestResonse {
     
     func withHttpCode(httpCode: Int) -> RequestResonse {
         self.httpCode = httpCode
+        return self
+    }
+    
+    func withError() -> RequestResonse {
+        self.hadError = true
         return self
     }
     
@@ -42,6 +48,19 @@ class RequestResonse {
         }
         
         return nil
+    }
+    
+    func getSprogified() -> [SprogJson] {
+        if let dataIn = self.swiftResponse.data {
+            do {
+                print(dataIn)
+                return try JSONDecoder().decode([SprogJson].self, from: dataIn)
+            } catch {
+                print(error)
+            }
+        }
+        
+        return []
     }
     
     func finalize() -> RequestResonse {

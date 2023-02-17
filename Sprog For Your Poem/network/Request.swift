@@ -13,6 +13,7 @@ class Request {
     private var url: String
     private var method: HttpMethod
     private var body: [String: Any]?
+    private var objectifiedBody: SprogJson?
     
     init(url: String, method: HttpMethod) {
         self.url = url
@@ -30,6 +31,7 @@ class Request {
             return
         }
 
+        puts("request out to \(String(describing: request.url))")
         URLSession.shared.dataTask(with: request) { (data, response, error) in
             let swiftResponse = SwiftResponse(data: data, response: response, error: error)
             self.handleResponse(swiftResponse: swiftResponse, dataHandler: dataHandler)
@@ -37,14 +39,16 @@ class Request {
     }
     
     private func handleResponse(swiftResponse: SwiftResponse, dataHandler: @escaping ((RequestResonse) -> Void)) {
-        if let _ = swiftResponse.error {
+        if let error = swiftResponse.error {
             dataHandler(
                 RequestResonse(swiftResponse: swiftResponse)
+                    .withError()
                     .finalize()
             )
+            puts("request error \(error)")
             return
         }
-        
+
         if let httpUrlResponse = swiftResponse.response as? HTTPURLResponse {
             dataHandler(
                 RequestResonse(swiftResponse: swiftResponse)
