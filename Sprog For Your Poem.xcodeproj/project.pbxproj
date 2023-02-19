@@ -17,6 +17,9 @@
 		BF89D5DB299980A800951CDC /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = BF89D5DA299980A800951CDC /* SQLite */; };
 		BF89D5DD2999863800951CDC /* ColumnType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF89D5DC2999863800951CDC /* ColumnType.swift */; };
 		BF89D5E0299F452F00951CDC /* Sha256.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF89D5DF299F452F00951CDC /* Sha256.swift */; };
+		BFCC288129A00BA400FE7158 /* Decompressor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCC288029A00BA400FE7158 /* Decompressor.swift */; };
+		BFCC288329A00F0200FE7158 /* PoemHeadResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCC288229A00F0200FE7158 /* PoemHeadResponse.swift */; };
+		BFCC288629A2B8B400FE7158 /* Gzip in Frameworks */ = {isa = PBXBuildFile; productRef = BFCC288529A2B8B400FE7158 /* Gzip */; };
 		BFFD1BA2269A4E8E00AE40E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFD1BA1269A4E8E00AE40E0 /* AppDelegate.swift */; };
 		BFFD1BA4269A4E8E00AE40E0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFD1BA3269A4E8E00AE40E0 /* SceneDelegate.swift */; };
 		BFFD1BA6269A4E8E00AE40E0 /* LandingPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFD1BA5269A4E8E00AE40E0 /* LandingPageVC.swift */; };
@@ -61,6 +64,8 @@
 		BF89D5D429996D9F00951CDC /* DatabaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseModel.swift; sourceTree = "<group>"; };
 		BF89D5DC2999863800951CDC /* ColumnType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColumnType.swift; sourceTree = "<group>"; };
 		BF89D5DF299F452F00951CDC /* Sha256.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sha256.swift; sourceTree = "<group>"; };
+		BFCC288029A00BA400FE7158 /* Decompressor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Decompressor.swift; sourceTree = "<group>"; };
+		BFCC288229A00F0200FE7158 /* PoemHeadResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoemHeadResponse.swift; sourceTree = "<group>"; };
 		BFFD1B9E269A4E8E00AE40E0 /* Sprog For Your Poem.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sprog For Your Poem.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFFD1BA1269A4E8E00AE40E0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BFFD1BA3269A4E8E00AE40E0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -88,6 +93,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BFCC288629A2B8B400FE7158 /* Gzip in Frameworks */,
 				BF89D5DB299980A800951CDC /* SQLite in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -122,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				BF89D5CB2998D14700951CDC /* Poem.swift */,
+				BFCC288229A00F0200FE7158 /* PoemHeadResponse.swift */,
 				BF89D5CD2998D16900951CDC /* Submission.swift */,
 				BF89D5D02998D2A900951CDC /* ParentComment.swift */,
 				BF2D08FF299F6DE80056A1D3 /* utils */,
@@ -153,6 +160,7 @@
 			children = (
 				BF89D5DF299F452F00951CDC /* Sha256.swift */,
 				BF06A08A299F4B9600D66702 /* test.playground */,
+				BFCC288029A00BA400FE7158 /* Decompressor.swift */,
 			);
 			path = utils;
 			sourceTree = "<group>";
@@ -251,6 +259,7 @@
 			name = "Sprog For Your Poem";
 			packageProductDependencies = (
 				BF89D5DA299980A800951CDC /* SQLite */,
+				BFCC288529A2B8B400FE7158 /* Gzip */,
 			);
 			productName = "Sprog For Your Poem";
 			productReference = BFFD1B9E269A4E8E00AE40E0 /* Sprog For Your Poem.app */;
@@ -325,6 +334,7 @@
 			mainGroup = BFFD1B95269A4E8D00AE40E0;
 			packageReferences = (
 				BF89D5D9299980A800951CDC /* XCRemoteSwiftPackageReference "SQLite" */,
+				BFCC288429A2B8B400FE7158 /* XCRemoteSwiftPackageReference "GzipSwift" */,
 			);
 			productRefGroup = BFFD1B9F269A4E8E00AE40E0 /* Products */;
 			projectDirPath = "";
@@ -378,6 +388,7 @@
 				BF2D08FA299F66250056A1D3 /* SprogJson.swift in Sources */,
 				BFFD1BDF269A4EBC00AE40E0 /* SwiftResponse.swift in Sources */,
 				BFFD1BAC269A4E8E00AE40E0 /* Sprog_For_Your_Poem.xcdatamodeld in Sources */,
+				BFCC288129A00BA400FE7158 /* Decompressor.swift in Sources */,
 				BF2D08FC299F67640056A1D3 /* SprogParentComment.swift in Sources */,
 				BF89D5D12998D2A900951CDC /* ParentComment.swift in Sources */,
 				BF89D5CE2998D16900951CDC /* Submission.swift in Sources */,
@@ -387,6 +398,7 @@
 				BFFD1BDE269A4EBC00AE40E0 /* HttpMethod.swift in Sources */,
 				BF89D5D529996DA000951CDC /* DatabaseModel.swift in Sources */,
 				BFFD1BA4269A4E8E00AE40E0 /* SceneDelegate.swift in Sources */,
+				BFCC288329A00F0200FE7158 /* PoemHeadResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -729,6 +741,14 @@
 				minimumVersion = 0.9.2;
 			};
 		};
+		BFCC288429A2B8B400FE7158 /* XCRemoteSwiftPackageReference "GzipSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/1024jp/GzipSwift";
+			requirement = {
+				kind = exactVersion;
+				version = 5.2.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -736,6 +756,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = BF89D5D9299980A800951CDC /* XCRemoteSwiftPackageReference "SQLite" */;
 			productName = SQLite;
+		};
+		BFCC288529A2B8B400FE7158 /* Gzip */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BFCC288429A2B8B400FE7158 /* XCRemoteSwiftPackageReference "GzipSwift" */;
+			productName = Gzip;
 		};
 /* End XCSwiftPackageProductDependency section */
 

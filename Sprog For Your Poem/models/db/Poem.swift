@@ -29,7 +29,7 @@ struct Poem: Codable, DatabaseModel {
         self.silver = silver
         self.timestamp = timestamp
         self.user = user
-        self.hash = Sha256.sha256(text: "\(link)_\(timestamp)")
+        self.hash = Poem.hash(link: link, timestamp: timestamp)
         self.id = id
     }
     
@@ -68,6 +68,30 @@ struct Poem: Codable, DatabaseModel {
         ]
     }
     
+    static func hash(link: String, timestamp: Int64) -> String {
+        return Sha256.sha256(text: "\(link)_\(timestamp)")
+    }
+    
+    static func selectAll() -> [Poem] {
+        return dbGetAll() as [Poem]
+    }
+    
+    static func get(id: Int64) -> Poem? {
+        return dbGet(id: id)
+    }
+    
+    static func get(hash: String) -> Poem? {
+        return dbGet(hash: hash)
+    }
+    
+    static func poemLoaded(poemJson: SprogJson) -> Bool {
+        if let _ = Poem.get(hash: Poem.hash(link: poemJson.link, timestamp: poemJson.timestamp)) {
+            return true
+        }
+        
+        return false
+    }
+    
     func save() -> Poem? {
         return Poem.dbSave(self) as Poem?
     }
@@ -90,17 +114,5 @@ struct Poem: Codable, DatabaseModel {
             return Submission.getByPoemId(id: _id)
         }
         return nil
-    }
-    
-    static func selectAll() -> [Poem] {
-        return dbGetAll() as [Poem]
-    }
-    
-    static func get(id: Int64) -> Poem? {
-        return dbGet(id: id)
-    }
-    
-    static func get(hash: String) -> Poem? {
-        return dbGet(hash: hash)
     }
 }

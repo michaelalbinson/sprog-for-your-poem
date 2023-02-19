@@ -1,8 +1,9 @@
 import SQLite
+import Compression
 
 /// Create an in-memory database
 DatabaseManager.testSeam_useMemoryDB()
 
-PoemLoader.getFull()
+PoemLoader.get60Days()
 
 Poem.selectAll()

@@ -50,14 +50,37 @@ class RequestResonse {
         return nil
     }
     
+    func getZippedSprogified() -> [SprogJson] {
+        guard let dataIn = self.swiftResponse.data else {
+            return []
+        }
+        
+        guard let unzipped = Decompressor.decompress(data: dataIn) else {
+            print("Failed to unzip poem data")
+            return []
+        }
+        
+        do {
+            print(unzipped)
+            return try JSONDecoder().decode([SprogJson].self, from: unzipped)
+        } catch {
+            print(error)
+            
+        }
+        
+        return []
+    }
+    
     func getSprogified() -> [SprogJson] {
-        if let dataIn = self.swiftResponse.data {
-            do {
-                print(dataIn)
-                return try JSONDecoder().decode([SprogJson].self, from: dataIn)
-            } catch {
-                print(error)
-            }
+        guard let dataIn = self.swiftResponse.data else {
+            return []
+        }
+        
+        do {
+            print(dataIn)
+            return try JSONDecoder().decode([SprogJson].self, from: dataIn)
+        } catch {
+            print(error)
         }
         
         return []
@@ -67,13 +90,22 @@ class RequestResonse {
         return self
     }
     
-    func getHeader(header: String) -> Any {
+    func contentLength() -> Int64 {
+        // if we successfully parse out a string from content-length it's actually an integer encoded as a string
+        if let cL = getHeader(header: "Content-Length") as? String {
+            return Int64(cL)!
+        }
+        
+        return 0
+    }
+    
+    func getHeader(header: String) -> Any? {
         if let allHeaders = self.headers {
-            if let value = allHeaders[header] {
+            if let value = allHeaders[AnyHashable(header)] {
                 return value
             }
         }
         
-        return ""
+        return nil
     }
 }

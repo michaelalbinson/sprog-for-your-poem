@@ -9,11 +9,11 @@ import Foundation
 
 class PoemLoader {
     static let URL_ROOT: String = "https://almoturg.com/"
-    static let URL_60_DAY: String = "poems_60days.json"
+    static let URL_60_DAY: String = "poems_60days.json.gz"
     static let URL_FULL: String = "poems.json"
     
     static func get60Days() {
-        loadPoemJSON(urlPath: URL_ROOT + PoemLoader.URL_60_DAY)
+        safeLoadCompressedPoemJson(urlPath: URL_ROOT + PoemLoader.URL_60_DAY)
     }
     
     static func getFull() {
@@ -21,23 +21,36 @@ class PoemLoader {
     }
     
     static func peekPoems() {
-        let request = Request(url: URL_60_DAY, method: .HEAD)
+        // no last check, we need to do a full load to check there's nothing new
+        guard let lastCheck = PoemHeadResponse.getLast() else {
+            get60Days()
+            return
+        }
+        
+        let request = Request(url: URL_ROOT + URL_60_DAY, method: .HEAD)
         request.exec() { response in
-            
+            // cache the contentLength of the new call and clean up the old one
+            lastCheck.delete()
+            let _ = PoemHeadResponse(type: URL_60_DAY, contentLength: response.contentLength(), timestamp: Int64(Date().timeIntervalSince1970), id: nil)
+                .save()
+
+            // mismatch in contentLength means there are new poems to consume
+            let nextContentLength = response.contentLength()
+            if (nextContentLength != lastCheck.contentLength) {
+                get60Days()
+            }
         }
     }
     
     private static func loadPoemJSON(urlPath: String) {
         Request(url: urlPath, method: .GET).exec() { response in
-            print(response)
             for poem in response.getSprogified() {
                 loadPoem(poem)
             }
-            print("Done")
         }
     }
     
-    static func loadPoem(_ poemMetadata: SprogJson) {
+    private static func loadPoem(_ poemMetadata: SprogJson) {
         print("Loading poem \(poemMetadata.link)")
         let poem = Poem(
             gold: poemMetadata.gold,
@@ -75,6 +88,18 @@ class PoemLoader {
                 order: count
             ).save()
             count += 1
+        }
+    }
+    
+    private static func safeLoadCompressedPoemJson(urlPath: String) {
+        Request(url: urlPath, method: .GET).exec() { response in
+            for poem in response.getZippedSprogified() {
+                if (Poem.poemLoaded(poemJson: poem)) {
+                    continue
+                }
+                
+                loadPoem(poem)
+            }
         }
     }
 }

@@ -23,6 +23,14 @@ extension DatabaseModel {
         }
     }
     
+    internal static func dangerouslyDeleteAll() {
+        do {
+            try rawConnection().run(getTable().delete())
+        } catch {
+            print("Failed to delete all rows on table \(tableName()): \(error)")
+        }
+    }
+    
     static func dbQuery<RowType: Codable>(_ expression: Expression<Bool>) -> [RowType] {
         return _getMany(expression) as [RowType]
     }

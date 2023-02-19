@@ -20,10 +20,6 @@ class DatabaseManager {
         return MANAGER
     }
     
-    func rawConnection() -> Connection {
-        return connection
-    }
-    
     static func registerTable(tableName: String, table: Table) {
         allTables[tableName] = table
     }
@@ -34,6 +30,10 @@ class DatabaseManager {
     
     static func registeredTables() -> [String: Table] {
         return allTables
+    }
+    
+    func rawConnection() -> Connection {
+        return connection
     }
     
     static func testSeam_useMemoryDB() {
