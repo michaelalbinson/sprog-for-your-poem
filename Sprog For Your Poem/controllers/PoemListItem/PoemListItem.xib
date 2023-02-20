@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFit" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="112" id="8zb-iO-TXA" customClass="PoemListItem" customModule="Sprog_For_Your_Poem" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="112"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8zb-iO-TXA" id="Vjm-5B-Yer">
+                <rect key="frame" x="0.0" y="0.0" width="393" height="112"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ngd-P6-P6O">
+                        <rect key="frame" x="20" y="37" width="353" height="66"/>
+                        <accessibility key="accessibilityConfiguration">
+                            <accessibilityTraits key="traits" notEnabled="YES"/>
+                        </accessibility>
+                        <string key="text">Poem snippet
+many placeholder words
+this will all be replaced</string>
+                        <color key="textColor" systemColor="labelColor"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                    </textView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Submission Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hRm-Ah-mfT">
+                        <rect key="frame" x="12" y="8" width="368" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="ngd-P6-P6O" firstAttribute="centerX" secondItem="Vjm-5B-Yer" secondAttribute="centerX" id="3mP-Mx-ZNk"/>
+                    <constraint firstAttribute="bottom" secondItem="ngd-P6-P6O" secondAttribute="bottom" constant="9" id="ISX-TB-DMu"/>
+                    <constraint firstAttribute="trailing" secondItem="hRm-Ah-mfT" secondAttribute="trailing" constant="13" id="K1M-vZ-ZdL"/>
+                    <constraint firstAttribute="trailing" secondItem="ngd-P6-P6O" secondAttribute="trailing" constant="20" symbolic="YES" id="Rq6-JT-LZM"/>
+                    <constraint firstItem="ngd-P6-P6O" firstAttribute="leading" secondItem="Vjm-5B-Yer" secondAttribute="leading" constant="20" symbolic="YES" id="r8j-Aq-M9n"/>
+                    <constraint firstItem="hRm-Ah-mfT" firstAttribute="top" secondItem="Vjm-5B-Yer" secondAttribute="top" constant="8" id="s7F-kf-R6D"/>
+                    <constraint firstItem="hRm-Ah-mfT" firstAttribute="leading" secondItem="Vjm-5B-Yer" secondAttribute="leading" constant="12" id="sL1-bW-9Nh"/>
+                    <constraint firstItem="ngd-P6-P6O" firstAttribute="top" secondItem="Vjm-5B-Yer" secondAttribute="top" constant="37" id="tlr-eI-uC7"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="poemSnippet" destination="ngd-P6-P6O" id="WDj-dL-fP1"/>
+                <outlet property="subTitle" destination="hRm-Ah-mfT" id="9m9-oy-pmq"/>
+            </connections>
+            <point key="canvasLocation" x="246.56488549618319" y="38.028169014084511"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

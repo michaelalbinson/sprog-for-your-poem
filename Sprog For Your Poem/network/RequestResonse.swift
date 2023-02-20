@@ -33,6 +33,10 @@ class RequestResonse {
         return self
     }
     
+    func hasError() -> Bool {
+        return self.hadError
+    }
+    
     func getJsonData() -> Any? {
         // returned cached data if already parsed
         if nil != self.responseJSON {

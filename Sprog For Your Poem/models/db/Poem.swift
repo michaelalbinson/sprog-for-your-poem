@@ -92,6 +92,12 @@ struct Poem: Codable, DatabaseModel {
         return false
     }
     
+    static func getRandom() -> Poem {
+        let allPoems = Poem.selectAll()
+        let index = Int.random(in: 1..<allPoems.count)
+        return Poem.get(id: Int64(index))!
+    }
+    
     func save() -> Poem? {
         return Poem.dbSave(self) as Poem?
     }

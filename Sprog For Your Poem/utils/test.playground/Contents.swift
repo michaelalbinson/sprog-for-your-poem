@@ -2,8 +2,18 @@ import SQLite
 import Compression
 
 /// Create an in-memory database
-DatabaseManager.testSeam_useMemoryDB()
+let test = """
+>This is a test string
 
-PoemLoader.get60Days()
+With a lot of lines with multiple things
 
-Poem.selectAll()
+"""
+
+
+
+let cleaned = test.replacingOccurrences(of: "^>.*\n*", with: "", options: [.regularExpression])
+
+if cleaned.split(separator: "\n").count > 3 {
+    cleaned.split(separator: "\n")[0...3].joined(separator: "\n")
+}
+print(cleaned.split(separator: "\n").dropLast(-3).joined(separator: "\n"))

@@ -11,6 +11,7 @@ class PoemLoader {
     static let URL_ROOT: String = "https://almoturg.com/"
     static let URL_60_DAY: String = "poems_60days.json.gz"
     static let URL_FULL: String = "poems.json"
+    static let RELOAD_TIME: TimeInterval = 60 * 60 * 6 // 6 hours
     
     static func get60Days() {
         safeLoadCompressedPoemJson(urlPath: URL_ROOT + PoemLoader.URL_60_DAY)
@@ -27,8 +28,19 @@ class PoemLoader {
             return
         }
         
+        // we're trying to check again too early
+        if (Double(lastCheck.timestamp) + RELOAD_TIME < Date().timeIntervalSince1970) {
+            return
+        }
+        
         let request = Request(url: URL_ROOT + URL_60_DAY, method: .HEAD)
         request.exec() { response in
+            // we'll just wait til the next cycle to try again
+            if (response.hasError()) {
+                print("Failed to make request to \(URL_ROOT + URL_60_DAY)")
+                return
+            }
+            
             // cache the contentLength of the new call and clean up the old one
             lastCheck.delete()
             let _ = PoemHeadResponse(type: URL_60_DAY, contentLength: response.contentLength(), timestamp: Int64(Date().timeIntervalSince1970), id: nil)
@@ -44,6 +56,11 @@ class PoemLoader {
     
     private static func loadPoemJSON(urlPath: String) {
         Request(url: urlPath, method: .GET).exec() { response in
+            if (response.hasError()) {
+                print("Failed to make request to \(urlPath)")
+                return
+            }
+            
             for poem in response.getSprogified() {
                 loadPoem(poem)
             }
